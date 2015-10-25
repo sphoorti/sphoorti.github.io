@@ -4,8 +4,10 @@ title: Involvement with Open Source projects.
 ---
 
 <ul class="post-list">
-{% for post in site.categories.blog %} 
-  <li><article><a href="{{ site.url }}{{ post.url }}">{{ post.title }} <span class="entry-date"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time></span>{% if post.excerpt %} <span class="excerpt">{{ post.excerpt }}</span>{% endif %}</a></article></li>
-{% endfor %}
+[Video tutorials for moVirt](https://www.youtube.com/channel/UCX2a6qOrCrUYGQCGLlHz2-A)    
+[Gnome OPW intern 2014-2015 for oVirt](https://wiki.gnome.org/OutreachProgramForWomen/2014/DecemberMarch#Accepted_Participants)    
+[Attended 2014 Open Hardware Summit in Rome, Italy as an Ada Initiative Scholar](http://www.oshwa.org/2014/10/17/conversations-with-two-summit-scholarship-recipients/)    
+[OpenStack Contributions](https://review.openstack.org/#/q/owner:sphoorti,n,z)    
 </ul>
+
 
