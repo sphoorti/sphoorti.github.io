@@ -5,17 +5,17 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Sample Link Post &#8211; Sphoorti Joglekar</title>
-<meta name="description" content="Example and code for using link posts.">
-<meta name="keywords" content="sample-post, link-post">
+<title>moVirt, OPW and me. &#8211; Sphoorti Joglekar</title>
+
+<meta name="keywords" content="">
 
 
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="Sample Link Post">
-<meta name="twitter:description" content="Example and code for using link posts.">
+<meta name="twitter:title" content="moVirt, OPW and me.">
 
-
+<meta name="twitter:site" content="@SphoortiJ">
+<meta name="twitter:creator" content="@SphoortiJ">
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://sphoorti.github.io/images/site-logo.png">
@@ -23,16 +23,16 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Sample Link Post">
-<meta property="og:description" content="Example and code for using link posts.">
-<meta property="og:url" content="http://sphoorti.github.io/articles/sample-link-post/">
+<meta property="og:title" content="moVirt, OPW and me.">
+
+<meta property="og:url" content="http://sphoorti.github.io/blog/moVirt_1/">
 <meta property="og:site_name" content="Sphoorti Joglekar">
 
 
 
 
 
-<link rel="canonical" href="http://sphoorti.github.io/articles/sample-link-post/">
+<link rel="canonical" href="http://sphoorti.github.io/blog/moVirt_1/">
 <link href="http://sphoorti.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Sphoorti Joglekar Feed">
 
 <!-- https://t.co/dKP3o1e -->
@@ -96,11 +96,6 @@
 		    
 		        
 		    
-		    <li><a href="http://sphoorti.github.io/theme-setup/" >Theme Setup</a></li>
-		  
-		    
-		        
-		    
 		    <li><a href="http://sphoorti.github.io/search/" >Search</a></li>
 		  
 	    </ul>
@@ -115,7 +110,7 @@
   		<a href="http://sphoorti.github.io/" class="site-logo" rel="home" title="Sphoorti Joglekar"><img src="http://sphoorti.github.io/images/site-logo.png" width="200" height="200" alt="Sphoorti Joglekar logo" class="animated fadeInDown"></a>
       
       <h1 class="site-title animated fadeIn"><a href="http://sphoorti.github.io/">Sphoorti Joglekar</a></h1>
-		<h2 class="site-description animated fadeIn" itemprop="description">Describe your website here.</h2>
+		<h2 class="site-description animated fadeIn" itemprop="description">Computer Engineer.</h2>
 	</div>
 </header><!-- /.masthead -->
 
@@ -127,9 +122,9 @@
     
     <div class="entry-wrapper">
       <header class="entry-header">
-        <span class="entry-tags"><a href="http://sphoorti.github.io/tags/#sample-post" title="Pages tagged sample-post">sample-post</a>&nbsp;&bull;&nbsp;<a href="http://sphoorti.github.io/tags/#link-post" title="Pages tagged link-post">link-post</a></span>
+        <span class="entry-tags"></span>
         
-          <h1 class="entry-title"><a href="http://mademistakes.com">Sample Link Post <span class="link-arrow">&rarr;</span></a></h1>
+          <h1 class="entry-title">moVirt, OPW and me.</h1>
         
       </header>
       <footer class="entry-meta">
@@ -139,24 +134,44 @@
           <img src="http://sphoorti.github.io/images/bio-photo.jpg" class="bio-photo" alt="Sphoorti Joglekar bio photo"></a>
         
         <span class="author vcard">By <span class="fn">Sphoorti Joglekar</span></span>
-        <span class="entry-date date published"><time datetime="2013-08-12T00:00:00+05:30"><i class="fa fa-calendar-o"></i> August 12, 2013</time></span>
+        <span class="entry-date date published"><time datetime="2014-12-09T17:38:50+05:30"><i class="fa fa-calendar-o"></i> December 09, 2014</time></span>
         
         
         
         
       </footer>
       <div class="entry-content">
-        <p>So Simple Theme now supports <strong>link posts</strong>, made famous by John Gruber. To activate just add <code>link: http://url-you-want-linked</code> to the post’s YAML front matter and you’re done.</p>
+        <p>My journey with moVirt began in the first week of October when I saw oVirt as a mentoring organization on the <a href="http://www.gnome.org/opw/">Gnome OPW</a> page.The moVirt project caught up my interest and I immediately contacted the project mentor Tomas Jelinek asking questions regarding how I should proceed with the application process.A long journey setting the development environment up and creating the first contribution started. Here is how it went  </p>
+
+<h4 id="my-opw-project--emenhancements-to-movirtem">My OPW project:- <em>Enhancements to moVirt.</em></h4>
+<p>moVirt is an android application to manage and monitor oVirt’s datacentres.  </p>
+
+<h4 id="my-first-contribution-">My first contribution:-</h4>
+<p>Since my OPW project is making enhancements to moVirt, I needed the development environment up and running and because there was no description how to do it, I decided that documenting the process of setting it up would be a good first contribution.I had Eclipse Kepler with android SDK installed on my machine, so I imported the cloned project in Eclipse.However, things went a little awry with this development environment.The .apk file on the github repository worked fine for me as against the one generated in my eclipse environment. My mentor asked me to compare both the .apk files. On comparison, we found that the Android Annotations framework was missing and I needed to configure it. Even after setting up the framework, the project would always break. After a discussion with the moVirt devels I decided to try using Android Studio and things worked for me. On deeper analysis, I realized that moVirt is a Gradle project and I hadn’t configured the right environment on Eclipse for it to work. Android Studio being gradle based, makes moVirt development easier.<br />
+Once I had the entire development setup functional, I made my <a href="https://github.com/matobet/moVirt/blob/master/README.md">first contribution</a>.  </p>
+
+<h4 id="tools-i-learned-about-">Tools I learned about:-</h4>
+<ol>
+  <li><a href="http://www.adventuresofanentrepreneur.net/creating-a-mobile-appsgames-company/how-to-unpack-pack-an-apk-file">APKTool.</a> This tool is used to unpack/pack the apk files.   </li>
+  <li><a href="https://developer.android.com/sdk/installing/index.html?pkg=studio">Android Studio.</a> The development IDE used for moVirt.  </li>
+  <li><a href="it is a live image which contains everything you need to start playing around with oVirt">oVirt_Live.</a>  It is a live image which contains everything you need to start playing around with oVirt.</li>
+  <li><a href="https://git-scm.com/">Git Basics.</a> Helps understanding git better.  </li>
+</ol>
+
+<h3 id="get-in-touch">Get in Touch</h3>
+<p>Contribute to <a href="https://github.com/matobet/movirt">moVirt on github</a><br />
+Stay updated with news. Follow <a href="https://twitter.com/mobileOvirt">@mobileOvirt</a> on Twitter.<br />
+Find <em>tjelinek</em>, <em>mbetkak</em> or <em>sphoorti</em> on <em>#ovirt</em> on <em>irc.oftc.net</em> and have a chat :)  </p>
+
+<p>Looking forward for an amazing OPW experience with Tomas and oVirt community.</p>
 
         
       </div><!-- /.entry-content -->
     </div><!-- /.entry-wrapper -->
     <nav class="pagination" role="navigation">
       
-        <a href="http://sphoorti.github.io/articles/video-post/" class="btn" title="A Post with a Video">Previous</a>
       
-      
-        <a href="http://sphoorti.github.io/articles/code-highlighting-post/" class="btn" title="Syntax Highlighting Post">Next</a>
+        <a href="http://sphoorti.github.io/blog/moVirt_2/" class="btn" title="Android Studio 101.">Next</a>
       
     </nav><!-- /.pagination -->
   </article>
@@ -168,14 +183,14 @@
 
 <span>&copy; 2015 Sphoorti Joglekar. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/so-simple/" rel="nofollow">So Simple Theme</a>.</span>
 <div class="social-icons">
+	<a href="https://twitter.com/SphoortiJ" title="Sphoorti Joglekar on Twitter" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
 	
 	
 	
 	
+	<a href="https://instagram.com/sphoortij" title="Sphoorti Joglekar on Instagram" target="_blank"><i class="fa fa-instagram fa-2x"></i></a>
 	
-	
-	
-	
+	<a href="https://github.com/sphoorti" title="Sphoorti Joglekar on Github" target="_blank"><i class="fa fa-github-square fa-2x"></i></a>
 	
   
 	
