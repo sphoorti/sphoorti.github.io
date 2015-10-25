@@ -35,4 +35,56 @@
   <url>
     <loc>http://sphoorti.github.io/tags/</loc>
   </url>
+  <url>
+    <loc>http://sphoorti.github.io/presentations/reveal.js-3.0.0/test/test-markdown-element-attributes.html</loc>
+    <lastmod>2015-10-25T23:21:09+05:30</lastmod>
+  </url>
+  <url>
+    <loc>http://sphoorti.github.io/presentations/reveal.js-3.0.0/test/test.html</loc>
+    <lastmod>2015-10-25T23:21:09+05:30</lastmod>
+  </url>
+  <url>
+    <loc>http://sphoorti.github.io/presentations/reveal.js-3.0.0/test/test-markdown-slide-attributes.html</loc>
+    <lastmod>2015-10-25T23:21:09+05:30</lastmod>
+  </url>
+  <url>
+    <loc>http://sphoorti.github.io/presentations/reveal.js-3.0.0/test/test-pdf.html</loc>
+    <lastmod>2015-10-25T23:21:09+05:30</lastmod>
+  </url>
+  <url>
+    <loc>http://sphoorti.github.io/presentations/reveal.js-3.0.0/test/test-markdown.html</loc>
+    <lastmod>2015-10-25T23:21:09+05:30</lastmod>
+  </url>
+  <url>
+    <loc>http://sphoorti.github.io/presentations/reveal.js-3.0.0/test/examples/math.html</loc>
+    <lastmod>2015-10-25T23:21:09+05:30</lastmod>
+  </url>
+  <url>
+    <loc>http://sphoorti.github.io/presentations/reveal.js-3.0.0/test/examples/embedded-media.html</loc>
+    <lastmod>2015-10-25T23:21:09+05:30</lastmod>
+  </url>
+  <url>
+    <loc>http://sphoorti.github.io/presentations/reveal.js-3.0.0/test/examples/slide-backgrounds.html</loc>
+    <lastmod>2015-10-25T23:21:09+05:30</lastmod>
+  </url>
+  <url>
+    <loc>http://sphoorti.github.io/presentations/reveal.js-3.0.0/test/examples/barebones.html</loc>
+    <lastmod>2015-10-25T23:21:09+05:30</lastmod>
+  </url>
+  <url>
+    <loc>http://sphoorti.github.io/presentations/reveal.js-3.0.0/index.html</loc>
+    <lastmod>2015-10-25T23:21:08+05:30</lastmod>
+  </url>
+  <url>
+    <loc>http://sphoorti.github.io/presentations/reveal.js-3.0.0/plugin/markdown/example.html</loc>
+    <lastmod>2015-10-25T23:21:09+05:30</lastmod>
+  </url>
+  <url>
+    <loc>http://sphoorti.github.io/presentations/reveal.js-3.0.0/plugin/notes/notes.html</loc>
+    <lastmod>2015-10-25T23:21:09+05:30</lastmod>
+  </url>
+  <url>
+    <loc>http://sphoorti.github.io/presentations/reveal.js-3.0.0/plugin/notes-server/notes.html</loc>
+    <lastmod>2015-10-25T23:21:09+05:30</lastmod>
+  </url>
 </urlset>
