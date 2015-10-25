@@ -2,14 +2,6 @@
 
   
     {
-      "title"			: "MathJax Example",
-      "link"			: "http://sphoorti.github.io/blog/mathjax-example/",
-      "excerpt"		: ""
-    }
-  
-
-  
-    ,{
       "title"			: "Importing CAcert Certificates in Android.",
       "link"			: "http://sphoorti.github.io/blog/moVirt_3/",
       "excerpt"		: ""
@@ -28,6 +20,22 @@
     ,{
       "title"			: "moVirt, OPW and me.",
       "link"			: "http://sphoorti.github.io/blog/moVirt_1/",
+      "excerpt"		: ""
+    }
+  
+
+  
+    ,{
+      "title"			: "Setting up DevStack with Neutron",
+      "link"			: "http://sphoorti.github.io/blog/devstack_setup/",
+      "excerpt"		: ""
+    }
+  
+
+  
+    ,{
+      "title"			: " Connecting the BeagleBone Black to the internet",
+      "link"			: "http://sphoorti.github.io/blog/BBB_netaccess/",
       "excerpt"		: ""
     }
   

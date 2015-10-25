@@ -5,15 +5,15 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>About Me &#8211; Sphoorti Joglekar</title>
-<meta name="description" content="So Simple is a responsive Jekyll theme for your words and images.">
+<title> Connecting the BeagleBone Black to the internet &#8211; Sphoorti Joglekar</title>
 
+<meta name="keywords" content="">
 
 
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="About Me">
-<meta name="twitter:description" content="So Simple is a responsive Jekyll theme for your words and images.">
+<meta name="twitter:title" content=" Connecting the BeagleBone Black to the internet">
+
 <meta name="twitter:site" content="@SphoortiJ">
 <meta name="twitter:creator" content="@SphoortiJ">
 
@@ -23,16 +23,16 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="About Me">
-<meta property="og:description" content="So Simple is a responsive Jekyll theme for your words and images.">
-<meta property="og:url" content="http://sphoorti.github.io/about/">
+<meta property="og:title" content=" Connecting the BeagleBone Black to the internet">
+
+<meta property="og:url" content="http://sphoorti.github.io/blog/BBB_netaccess/">
 <meta property="og:site_name" content="Sphoorti Joglekar">
 
 
 
 
 
-<link rel="canonical" href="http://sphoorti.github.io/about/">
+<link rel="canonical" href="http://sphoorti.github.io/blog/BBB_netaccess/">
 <link href="http://sphoorti.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Sphoorti Joglekar Feed">
 
 <!-- https://t.co/dKP3o1e -->
@@ -77,7 +77,7 @@
 
 </head>
 
-<body id="page">
+<body id="post">
 
 <div class="navigation-wrapper">
 	<nav role="navigation" id="site-nav" class="animated drop">
@@ -118,19 +118,99 @@
 
 
 <div id="main" role="main">
-  <article class="entry">
+  <article class="hentry">
     
     <div class="entry-wrapper">
       <header class="entry-header">
-        <h1 class="entry-title">About Me</h1>
+        <span class="entry-tags"></span>
+        
+          <h1 class="entry-title"> Connecting the BeagleBone Black to the internet</h1>
+        
       </header>
+      <footer class="entry-meta">
+        
+        
+        
+          <img src="http://sphoorti.github.io/images/bio-photo.jpg" class="bio-photo" alt="Sphoorti Joglekar bio photo"></a>
+        
+        <span class="author vcard">By <span class="fn">Sphoorti Joglekar</span></span>
+        <span class="entry-date date published"><time datetime="2014-02-27T17:38:50+05:30"><i class="fa fa-calendar-o"></i> February 27, 2014</time></span>
+        
+        
+        
+        
+      </footer>
       <div class="entry-content">
-        <p>I am Sphoorti Joglekar, a Computer Engineer based out of Pune,India.
-Technology fascinates me and I like trying out newer tools and applications.</p>
+        <p>I had a hard time connecting the BeagleBone Black to the internet while I was working from Fedora 19. The tutorials for other Linux distros were pretty straight forward. After having pondered over it for a day or two I finally managed to access internet from the Black. Special credits to <a href="http://www.linkedin.com/pub/gaurav-jain/1b/125/2b3">Gaurav Jain</a> :D.</p>
+
+<p>So here is what I did,      </p>
+
+<p>SSH to your Black using <em>ssh root@192.168.7.2</em>. Once this is done run the following commands from the beaglebone shell.   </p>
+
+<ol>
+  <li>root@beaglebone:/ # /sbin/route add default gw 192.168.7.1</li>
+  <li>root@beaglebone:/ # echo “nameserver 8.8.8.8” » /etc/resolv.conf</li>
+</ol>
+
+<p><strong>On the host Linux Machine except Fedora:</strong>  </p>
+
+<ol>
+  <li>
+    <p>sudo iptables -A POSTROUTING -t nat -j MASQUERADE  </p>
+
+    <p>This instruction enables the masquerading option allowing any device in the subnet to act on behalf of the host machine. </p>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>sudo echo 1</td>
+          <td>sudo tee /proc/sys/net/ipv4/ip_forward &gt; /dev/null</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>This instruction enables the ipv4 forwarding providing the beaglebone with access to the internet.</p>
+  </li>
+</ol>
+
+<p><strong>On a Fedora machine instead of above two intsructions:</strong>    </p>
+
+<ol>
+  <li>
+    <p>Open Firewall settings.    </p>
+  </li>
+  <li>
+    <p>Select zone as public.    </p>
+  </li>
+  <li>
+    <p>In the side tab panel select masquerading    </p>
+  </li>
+  <li>
+    <p>Enable Masquerade zones.    </p>
+  </li>
+</ol>
+
+<p><strong>Switch back to the BeagleBone Black terminal</strong>    <br />
+root@beaglebone:/ # ping google.com  <br />
+<em>A successful ping implies beaglebone black now  has internet access.</em>    </p>
+
+<p><strong>Go ahead and update your Black!</strong>     <br />
+	root@beaglebone:/ # opkg update  <br />
+<em>(opkg is the package manager for the BeagleBone Black.)</em></p>
+
+<p>Also here is one nice tutorial for getting a hands on with the BBB <a href="https://github.com/anujdeshpande/BBB-workshop">BBB-Workshop by Anuj Deshpande</a></p>
 
 
+        
       </div><!-- /.entry-content -->
     </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+      
+      
+        <a href="http://sphoorti.github.io/blog/devstack_setup/" class="btn" title="Setting up DevStack with Neutron">Next</a>
+      
+    </nav><!-- /.pagination -->
   </article>
 </div><!-- /#main -->
 

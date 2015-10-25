@@ -5,14 +5,14 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>MathJax Example &#8211; Sphoorti Joglekar</title>
+<title>Setting up DevStack with Neutron &#8211; Sphoorti Joglekar</title>
 
 <meta name="keywords" content="">
 
 
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="MathJax Example">
+<meta name="twitter:title" content="Setting up DevStack with Neutron">
 
 <meta name="twitter:site" content="@SphoortiJ">
 <meta name="twitter:creator" content="@SphoortiJ">
@@ -23,16 +23,16 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MathJax Example">
+<meta property="og:title" content="Setting up DevStack with Neutron">
 
-<meta property="og:url" content="http://sphoorti.github.io/blog/mathjax-example/">
+<meta property="og:url" content="http://sphoorti.github.io/blog/devstack_setup/">
 <meta property="og:site_name" content="Sphoorti Joglekar">
 
 
 
 
 
-<link rel="canonical" href="http://sphoorti.github.io/blog/mathjax-example/">
+<link rel="canonical" href="http://sphoorti.github.io/blog/devstack_setup/">
 <link href="http://sphoorti.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Sphoorti Joglekar Feed">
 
 <!-- https://t.co/dKP3o1e -->
@@ -110,7 +110,7 @@
   		<a href="http://sphoorti.github.io/" class="site-logo" rel="home" title="Sphoorti Joglekar"><img src="http://sphoorti.github.io/images/site-logo.png" width="200" height="200" alt="Sphoorti Joglekar logo" class="animated fadeInDown"></a>
       
       <h1 class="site-title animated fadeIn"><a href="http://sphoorti.github.io/">Sphoorti Joglekar</a></h1>
-		<h2 class="site-description animated fadeIn" itemprop="description">Computer Engineer.</h2>
+		<h2 class="site-description animated fadeIn" itemprop="description">Computer Engineer | DIY Enthusiast | FOSS</h2>
 	</div>
 </header><!-- /.masthead -->
 
@@ -124,7 +124,7 @@
       <header class="entry-header">
         <span class="entry-tags"></span>
         
-          <h1 class="entry-title">MathJax Example</h1>
+          <h1 class="entry-title">Setting up DevStack with Neutron</h1>
         
       </header>
       <footer class="entry-meta">
@@ -134,39 +134,120 @@
           <img src="http://sphoorti.github.io/images/bio-photo.jpg" class="bio-photo" alt="Sphoorti Joglekar bio photo"></a>
         
         <span class="author vcard">By <span class="fn">Sphoorti Joglekar</span></span>
-        <span class="entry-date date published"><time datetime="2015-08-10T17:38:50+05:30"><i class="fa fa-calendar-o"></i> August 10, 2015</time></span>
+        <span class="entry-date date published"><time datetime="2014-03-29T17:38:50+05:30"><i class="fa fa-calendar-o"></i> March 29, 2014</time></span>
         
         
         
         
       </footer>
       <div class="entry-content">
-        <p><a href="http://www.mathjax.org/">MathJax</a> is a simple way of including Tex/LaTex/MathML based mathematics in HTML webpages. To get up and running you need to include the MathJax script in the header of your github pages page, and then write some maths. For LaTex, there are two delimiters you need to know about, one for block or displayed mathematics <code>\[ ... \]</code>, and the other for inline mathematics <code>\( ... \)</code>.</p>
+        <p>Devstack is an All-In-One shell script widely used by OpenStack-devs to build a complete OpenStack development environment. It is advisable to install DevStack on a
+virtual machine and take periodic snapshots of the VM. When things go messy, you can easily revert back to a working snapshot!</p>
 
-<h2 id="usage">Usage</h2>
+<h4 id="prerequisites-">Prerequisites :</h4>
 
-<p>To enable MathJax support be sure Kramdown is your Markdown flavor of choice and MathJax is set to true in your <code>_config.yml</code> file.</p>
+<ol>
+  <li><a href="https://www.virtualbox.org/wiki/Linux_Downloads">Install VirtualBox</a></li>
+  <li>Download the <a href="http://archive.ubuntu.com/ubuntu/dists/precise/main/installer-amd64/current/images/netboot/mini.iso">minimal ubuntu iso</a> for Ubuntu 12.04. All other
+additional dependencies will be installed during DevStack setup.</li>
+  <li>Create a new VM having a minimum requirement of 2 GB RAM and 20 GB of storage.</li>
+  <li>After the VM is successfully created, run the following commands in terminal :-
+    <ol>
+      <li>$ sudo apt-get update</li>
+      <li>$ sudo apt-get install git</li>
+    </ol>
+  </li>
+</ol>
 
-<pre><code>markdown: kramdown
-mathjax: true
+<h4 id="after-the-initial-setup-its-time-to-install-devstack-">After the initial setup, its time to install DevStack !</h4>
+
+<ol>
+  <li>Clone the DevStack repository :-$ git clone git://git.openstack.org/openstack-dev/devstack   </li>
+  <li>Switch to the cloned devstack directory :- $ cd devstack  </li>
+  <li>Run the following command :-  devstack$ cp /samples/local.conf local.conf  </li>
+  <li>
+    <p>Open the local.conf file and edit the password fields and add neutron to enabled services      </p>
+
+    <p>ADMIN_PASSWORD=password<br />
+ MYSQL_PASSWORD=password<br />
+ RABBIT_PASSWORD=password<br />
+ SERVICE_PASSWORD=password<br />
+ SERVICE_TOKEN=password    </p>
+
+    <p>disable_service n-net<br />
+ ENABLED_SERVICES+=,q-svc,q-agt,q-dhcp,q-l3,q-meta,neutron        </p>
+  </li>
+  <li>Now run the shell script to setup DevStack development environment. devstack$ ./stack.sh<br />
+ <em>The script takes a while to complete.</em></li>
+</ol>
+
+<h5 id="if-stacksh-fails-with-following-error-">If stack.sh fails with following error :</h5>
+
+<pre><code>2014-03-28 20:39:57.007 | E: Could not get lock /var/lib/dpkg/lock - open (11: Resource temporarily unavailable)  
+2014-03-28 20:39:57.009 | E: Unable to lock the administration directory (/var/lib/dpkg/), is another process using it?  
+2014-03-28 20:39:57.016 | ++ err_trap  
+2014-03-28 20:39:57.018 | ++ local r=100  
+2014-03-28 20:39:57.019 | stack.sh failed: full log in /opt/stack/logs/stack.sh.log.2014-03-28-203740  
 </code></pre>
 
-<pre><code>Here is an example MathJax inline rendering \\( 1/x^{2} \\), and here is a block rendering: 
-\\[ \frac{1}{n^{2}} \\]
-</code></pre>
+<p>This error usually occurs when the ubuntu package manager is running in background. A workaround for this is :-  <br />
+    $ sudo fuser -v /var/lib/dpkg/lock      </p>
 
-<p>Here is an example MathJax inline rendering \( 1/x^{2} \), and here is a block rendering: 
-\[ \frac{1}{n^{2}} \]</p>
+<h5 id="on-successful-installation-you-ll-be-prompted-to-relevant-urls-accounts-and-passwords">On successful installation, you ll be prompted to relevant URLs, accounts and passwords!</h5>
 
-<p>The only thing to look out for is the escaping of the backslash when using markdown, so the delimiters become <code>\\[ ... \\]</code> and <code>\\( ... \\)</code> for inline and block maths respectively.</p>
+<h4 id="running-unit-tests-for-neutron-">Running unit tests for neutron :</h4>
+
+<p>The tests folder can be found at /opt/stack/neutron/neutron/. The tests are categorized mainly as :-    </p>
+
+<ol>
+  <li>
+    <p>Unit Tests - The source code is divided into small modules and each module is tested independently to ensure that the module conforms to its intended behavior.
+Mock objects are used to test the modules in isolation.<br />
+You could take a look at the <a href="http://python-mock.sourceforge.net/">Python Mock Module</a>.    </p>
+  </li>
+  <li>
+    <p>Functional Tests - These tests describe <em>what</em> the software <em>structure</em> actually does by validating the output based on the given input.      </p>
+  </li>
+</ol>
+
+<p>The tests can be run using the ./run_tests.sh script or using tox or nose . Tox creates a virtual environment for running the tests cases. It uses <code>Testr</code>_ for
+managing the running of the test cases.</p>
+
+<ol>
+  <li>
+    <p>/opt/stack/neutron/$ :- ./run_tests.sh -V<br />
+The script runs all the tests from the root source directory.  </p>
+  </li>
+  <li>
+    <p>/opt/stack/neutron/$ :- tox -e py27<br />
+This runs all the unit tests for python 2.7 version dependencies.  </p>
+  </li>
+</ol>
+
+<p>These tests take a lot of time to run!</p>
+
+<h5 id="emi-individual-tests-can-also-be-run-using-the-following-syntax--emi"><em><i> Individual tests can also be run using the following syntax. :-&lt;/em&gt;</i></em></h5>
+
+<p>./run_tests.sh  neutron.tests.unit.test _wsgi</p>
+
+<h5 id="using-tox--">Using tox :-</h5>
+
+<p>tox -e py27  neutron.tests.unit.test_wsgi     </p>
+
+<p>The <i>pep8</i> tests can be run using tox as follows:    </p>
+
+<p>tox -e pep8 neutron.tests.unit.test_wsgi  </p>
+
 
         
       </div><!-- /.entry-content -->
     </div><!-- /.entry-wrapper -->
     <nav class="pagination" role="navigation">
       
-        <a href="http://sphoorti.github.io/blog/moVirt_3/" class="btn" title="Importing CAcert Certificates in Android.">Previous</a>
+        <a href="http://sphoorti.github.io/blog/BBB_netaccess/" class="btn" title=" Connecting the BeagleBone Black to the internet">Previous</a>
       
+      
+        <a href="http://sphoorti.github.io/blog/moVirt_1/" class="btn" title="moVirt, OPW and me.">Next</a>
       
     </nav><!-- /.pagination -->
   </article>

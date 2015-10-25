@@ -4,51 +4,13 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://sphoorti.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="http://sphoorti.github.io" />
-<updated>2015-10-25T21:04:36+05:30</updated>
+<updated>2015-10-25T21:27:02+05:30</updated>
 <id>http://sphoorti.github.io/</id>
 <author>
   <name>Sphoorti Joglekar</name>
   <uri>http://sphoorti.github.io/</uri>
   <email>sphoorti.joglekar@gmail.com</email>
 </author>
-
-
-  
-
-<entry>
-  <title type="html"><![CDATA[MathJax Example]]></title>
-  <link rel="alternate" type="text/html" href="http://sphoorti.github.io/blog/mathjax-example/" />
-  <id>http://sphoorti.github.io/blog/mathjax-example</id>
-  <published>2015-08-10T17:38:50+05:30</published>
-  <updated>2015-08-10T17:38:50+05:30</updated>
-  <author>
-    <name>Sphoorti Joglekar</name>
-    <uri>http://sphoorti.github.io</uri>
-    <email>sphoorti.joglekar@gmail.com</email>
-  </author>
-  <content type="html">
-    &lt;p&gt;&lt;a href=&quot;http://www.mathjax.org/&quot;&gt;MathJax&lt;/a&gt; is a simple way of including Tex/LaTex/MathML based mathematics in HTML webpages. To get up and running you need to include the MathJax script in the header of your github pages page, and then write some maths. For LaTex, there are two delimiters you need to know about, one for block or displayed mathematics &lt;code&gt;\[ ... \]&lt;/code&gt;, and the other for inline mathematics &lt;code&gt;\( ... \)&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
-
-&lt;p&gt;To enable MathJax support be sure Kramdown is your Markdown flavor of choice and MathJax is set to true in your &lt;code&gt;_config.yml&lt;/code&gt; file.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;markdown: kramdown
-mathjax: true
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code&gt;Here is an example MathJax inline rendering \\( 1/x^{2} \\), and here is a block rendering: 
-\\[ \frac{1}{n^{2}} \\]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Here is an example MathJax inline rendering \( 1/x^{2} \), and here is a block rendering: 
-\[ \frac{1}{n^{2}} \]&lt;/p&gt;
-
-&lt;p&gt;The only thing to look out for is the escaping of the backslash when using markdown, so the delimiters become &lt;code&gt;\\[ ... \\]&lt;/code&gt; and &lt;code&gt;\\( ... \\)&lt;/code&gt; for inline and block maths respectively.&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;http://sphoorti.github.io/blog/mathjax-example/&quot;&gt;MathJax Example&lt;/a&gt; was originally published by Sphoorti Joglekar at &lt;a href=&quot;http://sphoorti.github.io&quot;&gt;Sphoorti Joglekar&lt;/a&gt; on August 10, 2015.&lt;/p&gt;
-  </content>
-</entry>
 
 
   
@@ -257,6 +219,203 @@ Find &lt;em&gt;tjelinek&lt;/em&gt;, &lt;em&gt;mbetkak&lt;/em&gt; or &lt;em&gt;sp
 &lt;p&gt;Looking forward for an amazing OPW experience with Tomas and oVirt community.&lt;/p&gt;
 
     &lt;p&gt;&lt;a href=&quot;http://sphoorti.github.io/blog/moVirt_1/&quot;&gt;moVirt, OPW and me.&lt;/a&gt; was originally published by Sphoorti Joglekar at &lt;a href=&quot;http://sphoorti.github.io&quot;&gt;Sphoorti Joglekar&lt;/a&gt; on December 09, 2014.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Setting up DevStack with Neutron]]></title>
+  <link rel="alternate" type="text/html" href="http://sphoorti.github.io/blog/devstack_setup/" />
+  <id>http://sphoorti.github.io/blog/devstack_setup</id>
+  <published>2014-03-29T17:38:50+05:30</published>
+  <updated>2014-03-29T17:38:50+05:30</updated>
+  <author>
+    <name>Sphoorti Joglekar</name>
+    <uri>http://sphoorti.github.io</uri>
+    <email>sphoorti.joglekar@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;Devstack is an All-In-One shell script widely used by OpenStack-devs to build a complete OpenStack development environment. It is advisable to install DevStack on a
+virtual machine and take periodic snapshots of the VM. When things go messy, you can easily revert back to a working snapshot!&lt;/p&gt;
+
+&lt;h4 id=&quot;prerequisites-&quot;&gt;Prerequisites :&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.virtualbox.org/wiki/Linux_Downloads&quot;&gt;Install VirtualBox&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Download the &lt;a href=&quot;http://archive.ubuntu.com/ubuntu/dists/precise/main/installer-amd64/current/images/netboot/mini.iso&quot;&gt;minimal ubuntu iso&lt;/a&gt; for Ubuntu 12.04. All other
+additional dependencies will be installed during DevStack setup.&lt;/li&gt;
+  &lt;li&gt;Create a new VM having a minimum requirement of 2 GB RAM and 20 GB of storage.&lt;/li&gt;
+  &lt;li&gt;After the VM is successfully created, run the following commands in terminal :-
+    &lt;ol&gt;
+      &lt;li&gt;$ sudo apt-get update&lt;/li&gt;
+      &lt;li&gt;$ sudo apt-get install git&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;after-the-initial-setup-its-time-to-install-devstack-&quot;&gt;After the initial setup, its time to install DevStack !&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Clone the DevStack repository :-$ git clone git://git.openstack.org/openstack-dev/devstack   &lt;/li&gt;
+  &lt;li&gt;Switch to the cloned devstack directory :- $ cd devstack  &lt;/li&gt;
+  &lt;li&gt;Run the following command :-  devstack$ cp /samples/local.conf local.conf  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Open the local.conf file and edit the password fields and add neutron to enabled services      &lt;/p&gt;
+
+    &lt;p&gt;ADMIN_PASSWORD=password&lt;br /&gt;
+ MYSQL_PASSWORD=password&lt;br /&gt;
+ RABBIT_PASSWORD=password&lt;br /&gt;
+ SERVICE_PASSWORD=password&lt;br /&gt;
+ SERVICE_TOKEN=password    &lt;/p&gt;
+
+    &lt;p&gt;disable_service n-net&lt;br /&gt;
+ ENABLED_SERVICES+=,q-svc,q-agt,q-dhcp,q-l3,q-meta,neutron        &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Now run the shell script to setup DevStack development environment. devstack$ ./stack.sh&lt;br /&gt;
+ &lt;em&gt;The script takes a while to complete.&lt;/em&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h5 id=&quot;if-stacksh-fails-with-following-error-&quot;&gt;If stack.sh fails with following error :&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;2014-03-28 20:39:57.007 | E: Could not get lock /var/lib/dpkg/lock - open (11: Resource temporarily unavailable)  
+2014-03-28 20:39:57.009 | E: Unable to lock the administration directory (/var/lib/dpkg/), is another process using it?  
+2014-03-28 20:39:57.016 | ++ err_trap  
+2014-03-28 20:39:57.018 | ++ local r=100  
+2014-03-28 20:39:57.019 | stack.sh failed: full log in /opt/stack/logs/stack.sh.log.2014-03-28-203740  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This error usually occurs when the ubuntu package manager is running in background. A workaround for this is :-  &lt;br /&gt;
+    $ sudo fuser -v /var/lib/dpkg/lock      &lt;/p&gt;
+
+&lt;h5 id=&quot;on-successful-installation-you-ll-be-prompted-to-relevant-urls-accounts-and-passwords&quot;&gt;On successful installation, you ll be prompted to relevant URLs, accounts and passwords!&lt;/h5&gt;
+
+&lt;h4 id=&quot;running-unit-tests-for-neutron-&quot;&gt;Running unit tests for neutron :&lt;/h4&gt;
+
+&lt;p&gt;The tests folder can be found at /opt/stack/neutron/neutron/. The tests are categorized mainly as :-    &lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Unit Tests - The source code is divided into small modules and each module is tested independently to ensure that the module conforms to its intended behavior.
+Mock objects are used to test the modules in isolation.&lt;br /&gt;
+You could take a look at the &lt;a href=&quot;http://python-mock.sourceforge.net/&quot;&gt;Python Mock Module&lt;/a&gt;.    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Functional Tests - These tests describe &lt;em&gt;what&lt;/em&gt; the software &lt;em&gt;structure&lt;/em&gt; actually does by validating the output based on the given input.      &lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The tests can be run using the ./run_tests.sh script or using tox or nose . Tox creates a virtual environment for running the tests cases. It uses &lt;code&gt;Testr&lt;/code&gt;_ for
+managing the running of the test cases.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;/opt/stack/neutron/$ :- ./run_tests.sh -V&lt;br /&gt;
+The script runs all the tests from the root source directory.  &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;/opt/stack/neutron/$ :- tox -e py27&lt;br /&gt;
+This runs all the unit tests for python 2.7 version dependencies.  &lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;These tests take a lot of time to run!&lt;/p&gt;
+
+&lt;h5 id=&quot;emi-individual-tests-can-also-be-run-using-the-following-syntax--emi&quot;&gt;&lt;em&gt;&lt;i&gt; Individual tests can also be run using the following syntax. :-&amp;lt;/em&amp;gt;&lt;/i&gt;&lt;/em&gt;&lt;/h5&gt;
+
+&lt;p&gt;./run_tests.sh  neutron.tests.unit.test _wsgi&lt;/p&gt;
+
+&lt;h5 id=&quot;using-tox--&quot;&gt;Using tox :-&lt;/h5&gt;
+
+&lt;p&gt;tox -e py27  neutron.tests.unit.test_wsgi     &lt;/p&gt;
+
+&lt;p&gt;The &lt;i&gt;pep8&lt;/i&gt; tests can be run using tox as follows:    &lt;/p&gt;
+
+&lt;p&gt;tox -e pep8 neutron.tests.unit.test_wsgi  &lt;/p&gt;
+
+
+    &lt;p&gt;&lt;a href=&quot;http://sphoorti.github.io/blog/devstack_setup/&quot;&gt;Setting up DevStack with Neutron&lt;/a&gt; was originally published by Sphoorti Joglekar at &lt;a href=&quot;http://sphoorti.github.io&quot;&gt;Sphoorti Joglekar&lt;/a&gt; on March 29, 2014.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[ Connecting the BeagleBone Black to the internet]]></title>
+  <link rel="alternate" type="text/html" href="http://sphoorti.github.io/blog/BBB_netaccess/" />
+  <id>http://sphoorti.github.io/blog/BBB_netaccess</id>
+  <published>2014-02-27T17:38:50+05:30</published>
+  <updated>2014-02-27T17:38:50+05:30</updated>
+  <author>
+    <name>Sphoorti Joglekar</name>
+    <uri>http://sphoorti.github.io</uri>
+    <email>sphoorti.joglekar@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;I had a hard time connecting the BeagleBone Black to the internet while I was working from Fedora 19. The tutorials for other Linux distros were pretty straight forward. After having pondered over it for a day or two I finally managed to access internet from the Black. Special credits to &lt;a href=&quot;http://www.linkedin.com/pub/gaurav-jain/1b/125/2b3&quot;&gt;Gaurav Jain&lt;/a&gt; :D.&lt;/p&gt;
+
+&lt;p&gt;So here is what I did,      &lt;/p&gt;
+
+&lt;p&gt;SSH to your Black using &lt;em&gt;ssh root@192.168.7.2&lt;/em&gt;. Once this is done run the following commands from the beaglebone shell.   &lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;root@beaglebone:/ # /sbin/route add default gw 192.168.7.1&lt;/li&gt;
+  &lt;li&gt;root@beaglebone:/ # echo “nameserver 8.8.8.8” » /etc/resolv.conf&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;On the host Linux Machine except Fedora:&lt;/strong&gt;  &lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;sudo iptables -A POSTROUTING -t nat -j MASQUERADE  &lt;/p&gt;
+
+    &lt;p&gt;This instruction enables the masquerading option allowing any device in the subnet to act on behalf of the host machine. &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;sudo echo 1&lt;/td&gt;
+          &lt;td&gt;sudo tee /proc/sys/net/ipv4/ip_forward &amp;gt; /dev/null&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+
+    &lt;p&gt;This instruction enables the ipv4 forwarding providing the beaglebone with access to the internet.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;On a Fedora machine instead of above two intsructions:&lt;/strong&gt;    &lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Open Firewall settings.    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Select zone as public.    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;In the side tab panel select masquerading    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Enable Masquerade zones.    &lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Switch back to the BeagleBone Black terminal&lt;/strong&gt;    &lt;br /&gt;
+root@beaglebone:/ # ping google.com  &lt;br /&gt;
+&lt;em&gt;A successful ping implies beaglebone black now  has internet access.&lt;/em&gt;    &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Go ahead and update your Black!&lt;/strong&gt;     &lt;br /&gt;
+	root@beaglebone:/ # opkg update  &lt;br /&gt;
+&lt;em&gt;(opkg is the package manager for the BeagleBone Black.)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Also here is one nice tutorial for getting a hands on with the BBB &lt;a href=&quot;https://github.com/anujdeshpande/BBB-workshop&quot;&gt;BBB-Workshop by Anuj Deshpande&lt;/a&gt;&lt;/p&gt;
+
+
+    &lt;p&gt;&lt;a href=&quot;http://sphoorti.github.io/blog/BBB_netaccess/&quot;&gt; Connecting the BeagleBone Black to the internet&lt;/a&gt; was originally published by Sphoorti Joglekar at &lt;a href=&quot;http://sphoorti.github.io&quot;&gt;Sphoorti Joglekar&lt;/a&gt; on February 27, 2014.&lt;/p&gt;
   </content>
 </entry>
 
