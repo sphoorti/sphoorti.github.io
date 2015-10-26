@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Things I learned.
+title: Ramblings longer than 140 chars.
 excerpt: "An archive of blog posts sorted by date."
 search_omit: true
 ---
